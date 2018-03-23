@@ -45,7 +45,7 @@ clean:
 
 test:
 	@echo "Testing..."
-	$Q go test $(if $V,-v) ./...
+	$Q go get ./... && go test $(if $V,-v) ./...
 ifndef CI
 	@echo "Testing Outside CI..."
 	@echo "VGO Vet"
