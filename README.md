@@ -1,6 +1,5 @@
 ## buffet
-![Status]
-[![Generic badge](https://ci.ketelsen.house/api/badges/bketelsen/buffet/status.svg)](https://ci.ketelsen.house/api/badges/bketelsen/buffet)
+[![Build Status](https://ci.ketelsen.house/api/badges/bketelsen/buffet/status.svg)](https://ci.ketelsen.house/api/badges/bketelsen/buffet)
 
 
 Buffet is an OpenTracing middleware for [buffalo](gobuffalo.io)
