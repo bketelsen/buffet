@@ -11,7 +11,7 @@ all: setup test build
 .PHONY: build
 build: setup
 	@echo "Building..."
-	$Q go build $(if $V,-v) $(VERSION_FLAGS)
+	$Q go get ./... && go build $(if $V,-v) $(VERSION_FLAGS)
 
 .PHONY: tags
 tags:
