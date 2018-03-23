@@ -6,6 +6,4 @@ pipeline:
   build:
     image: golang:1.10
     commands:
-      - go get
-      - go build
-      - go test
+      - make
