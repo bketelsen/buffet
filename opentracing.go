@@ -84,7 +84,7 @@ func SpanFromContext(c buffalo.Context) opentracing.Span {
 // ChildSpan returns a child span derived from the buffalo context "c"
 func ChildSpan(opname string, c buffalo.Context) opentracing.Span {
 	psp := SpanFromContext(c)
-	sp := opentracing.StartSpan(
+	sp := tracer.StartSpan(
 		opname,
 		opentracing.ChildOf(psp.Context()))
 	return sp
