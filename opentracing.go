@@ -1,6 +1,7 @@
 package buffet
 
 import (
+	"context"
 	"strings"
 
 	"github.com/gobuffalo/buffalo"
@@ -103,4 +104,12 @@ func ChildSpan(opname string, c buffalo.Context) opentracing.Span {
 func operation(s string) string {
 	chunks := strings.Split(s, ".")
 	return chunks[len(chunks)-1]
+}
+
+func ChildSpanFromContext(opname string, ctx context.Context) opentracing.Span {
+	psp := opentracing.SpanFromContext(ctx)
+	sp := tracer.StartSpan(
+		opname,
+		opentracing.ChildOf(psp.Context()))
+	return sp
 }
